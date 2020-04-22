@@ -1,0 +1,14 @@
+.computers_section{
+    background-color: white;
+    margin: 8px 16px;
+    border-radius: 4px;
+}
+
+.text1{
+    text-align: center;
+}
+
+.example_input {
+    width: 250px;
+}
+

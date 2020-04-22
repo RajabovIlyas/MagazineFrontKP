@@ -1,0 +1,468 @@
+/*!
+Автор: Сергеев Павел
+Ссылка на автора: vk.com/id79064188910634528106
+Специально для bloject.ru
+
+  - Основные
+  - Кнопка
+  - Картинки
+  - Волны 1 анимация
+  - Волны 2 анимация
+  - Лодка анимация
+*/
+
+/* Основные */
+* {
+  font-family: "Open Sans";
+}
+
+body {
+  background-color: #FEFEFE;
+  color: #262524;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: center;
+}
+
+h1, h2 {
+  text-transform: uppercase;
+  margin: 6px 0;
+}
+
+p {
+  margin: 6px 0;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 150px;
+  color: #44A2E2;
+  line-height: 150px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 60px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+/* Кнопка */
+.btn-action {
+  background-color: #44A2E2;
+  color: #FEFEFE !important;
+  text-transform: uppercase;
+  font-size: 24px;
+  padding: 20px 60px;
+}
+
+.btn-action:hover {
+  background-color: #458CBD;
+}
+
+/* Картинки */
+.illustration {
+  position: relative;
+  width: 876px;
+  height: 394px;
+  background-size: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+.illustration .boat {
+  background: url(/images/404/boat.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 682px;
+  height: 373px;
+  left: 50px;
+  bottom: 19px;
+  -moz-animation: 4s ease 0s normal none infinite shake;
+  -moz-transform-origin: center bottom;
+  -webkit-animation: shake 4s infinite ease-in-out;
+  -webkit-transform-origin: center bottom;
+  -o-animation: 4s ease 0s normal none infinite shake;
+  -o-transform-origin: center bottom;
+  -o-animation: shake 4s infinite ease-in-out;
+  -o-transform-origin: center bottom;
+  -ms-animation: 4s ease 0s normal none infinite shake;
+  -ms-transform-origin: center bottom;
+  -ms-animation: shake 4s infinite ease-in-out;
+  -ms-transform-origin: center bottom;
+  animation: 4s ease 0s normal none infinite shake;
+  transform-origin: center bottom;
+  animation: shake 4s infinite ease-in-out;
+  transform-origin: center bottom;
+}
+.illustration .water1 {
+  background: url(/images/404/water1.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 876px;
+  height: 64px;
+  bottom: 60px;
+  -webkit-animation: water1 2s infinite linear;
+  -moz-animation: water1 2s infinite linear;
+  -ms-animation: water1 2s infinite linear;
+  -o-animation: water1 2s infinite linear;
+  animation: water1 2s infinite linear;
+}
+.illustration .water2 {
+  background: url(/images/404/water2.png) no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 876px;
+  height: 111px;
+  bottom: 0;
+  -webkit-animation: water2 2s infinite linear;
+  -ms-animation: water2 2s infinite linear;
+  -moz-animation: water2 2s infinite linear;
+  -o-animation: water2 2s infinite linear;
+  animation: water2 2s infinite linear;
+}
+
+/* Волна 1 анимация */
+@-webkit-keyframes water1 {
+  0% {
+    -webkit-transform: translate(0, 5px);
+  }
+  50% {
+    -webkit-transform: translate(0, -5px);
+  }
+  100% {
+    -webkit-transform: translate(0, 5px);
+  }
+}
+@-moz-keyframes water1 {
+  0% {
+    -moz-transform: translate(0, 5px);
+  }
+  50% {
+    -moz-transform: translate(0, -5px);
+  }
+  100% {
+    -moz-transform: translate(0, 5px);
+  }
+}
+@-ms-keyframes water1 {
+  0% {
+    -ms-transform: translate(0, 5px);
+  }
+  50% {
+    -ms-transform: translate(0, -5px);
+  }
+  100% {
+    -ms-transform: translate(0, 5px);
+  }
+}
+@-o-keyframes water1 {
+  0% {
+    -o-transform: translate(0, 5px);
+  }
+  50% {
+    -o-transform: translate(0, -5px);
+  }
+  100% {
+    -o-transform: translate(0, 5px);
+  }
+}
+@keyframes water1 {
+  0% {
+    transform: translate(0, 5px);
+  }
+  50% {
+    transform: translate(0, -5px);
+  }
+  100% {
+    transform: translate(0, 5px);
+  }
+}
+/* Волна 2 анимация */
+@-webkit-keyframes water2 {
+  0% {
+    -webkit-transform: translate(0, -5px);
+  }
+  50% {
+    -webkit-transform: translate(0, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0, -5px);
+  }
+}
+@-moz-keyframes water2 {
+  0% {
+    -moz-transform: translate(0, -5px);
+  }
+  50% {
+    -moz-transform: translate(0, 0px);
+  }
+  100% {
+    -moz-transform: translate(0, -5px);
+  }
+}
+@-ms-keyframes water2 {
+  0% {
+    -ms-transform: translate(0, -5px);
+  }
+  50% {
+    -ms-transform: translate(0, 0px);
+  }
+  100% {
+    -ms-transform: translate(0, -5px);
+  }
+}
+@-o-keyframes water2 {
+  0% {
+    -o-transform: translate(0, -5px);
+  }
+  50% {
+    -o-transform: translate(0, 0px);
+  }
+  100% {
+    -o-transform: translate(0, -5px);
+  }
+}
+@keyframes water2 {
+  0% {
+    transform: translate(0, -5px);
+  }
+  50% {
+    transform: translate(0, 0px);
+  }
+  100% {
+    transform: translate(0, -5px);
+  }
+}
+/* Лодка анимация */
+@-moz-keyframes shake {
+  0% {
+    -moz-transform: rotate(-2deg);
+  }
+  50% {
+    -moz-transform: rotate(2deg);
+  }
+  100% {
+    -moz-transform: rotate(-2deg);
+  }
+}
+@-webkit-keyframes shake {
+  0% {
+    -webkit-transform: rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: rotate(2deg);
+  }
+  100% {
+    -webkit-transform: rotate(-2deg);
+  }
+}
+@-o-keyframes shake {
+  0% {
+    -o-transform: rotate(-2deg);
+  }
+  50% {
+    -o-transform: rotate(2deg);
+  }
+  100% {
+    -o-transform: rotate(-2deg);
+  }
+}
+@-ms-keyframes shake {
+  0% {
+    -ms-transform: rotate(-2deg);
+  }
+  50% {
+    -ms-transform: rotate(2deg);
+  }
+  100% {
+    -ms-transform: rotate(-2deg);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(-2deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: rotate(-2deg);
+  }
+}
+
+/* max-width: 1920px */
+@media (max-width: 1920px) {
+  body {
+    font-size: 19.2px;
+  }
+
+  h1, h2, p {
+    margin: 4.8px;
+  }
+
+  h1 {
+    font-size: 120px;
+    line-height: 120px;
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .btn-action {
+    padding: 16px 48px;
+    font-size: 19.2px;
+  }
+
+  section {
+    margin-bottom: 48px;
+  }
+
+  .illustration {
+    width: 700.8px;
+    height: 315.2px;
+  }
+  .illustration .boat {
+    width: 545.6px;
+    height: 298.4px;
+    left: 40px;
+    bottom: 15.2px;
+  }
+  .illustration .water1 {
+    width: 700.8px;
+    height: 51.2px;
+    bottom: 48px;
+  }
+  .illustration .water2 {
+    width: 700.8px;
+    height: 88.8px;
+  }
+}
+/* max-width: 1366px */
+@media (max-width: 1440px) {
+  body {
+    font-size: 14.4px;
+  }
+
+  h1, h2, p {
+    margin: 3.6px;
+  }
+
+  h1 {
+    font-size: 90px;
+    line-height: 90px;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .btn-action {
+    padding: 16px 36px;
+    font-size: 14.4px;
+  }
+
+  section {
+    margin-bottom: 36px;
+  }
+
+  .illustration {
+    width: 525.6px;
+    height: 236.4px;
+  }
+  .illustration .boat {
+    width: 409.2px;
+    height: 223.8px;
+    left: 30px;
+    bottom: 11.4px;
+  }
+  .illustration .water1 {
+    width: 525.6px;
+    height: 38.4px;
+    bottom: 36px;
+  }
+  .illustration .water2 {
+    width: 525.6px;
+    height: 66.6px;
+  }
+}
+/* max-width: 768px */
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+  }
+
+  h1, h2, p {
+    margin: 3px;
+  }
+
+  h1 {
+    font-size: 75px;
+    line-height: 75px;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .btn-action {
+    padding: 16px 30px;
+    font-size: 12px;
+  }
+
+  section {
+    margin-bottom: 30px;
+  }
+
+  .illustration {
+    width: 438px;
+    height: 197px;
+  }
+  .illustration .boat {
+    width: 341px;
+    height: 186.5px;
+    left: 25px;
+    bottom: 9.5px;
+  }
+  .illustration .water1 {
+    width: 438px;
+    height: 32px;
+    bottom: 30px;
+  }
+  .illustration .water2 {
+    width: 438px;
+    height: 55.5px;
+  }
+}
+/* max-width: 468px */
+@media (max-width: 468px) {
+  section {
+    margin-bottom: 18px;
+  }
+
+  .illustration {
+    width: 262.8px;
+    height: 118.2px;
+  }
+  .illustration .boat {
+    width: 204.6px;
+    height: 111.9px;
+    left: 15px;
+    bottom: 5.7px;
+  }
+  .illustration .water1 {
+    width: 262.8px;
+    height: 19.2px;
+    bottom: 18px;
+  }
+  .illustration .water2 {
+    width: 262.8px;
+    height: 33.3px;
+  }
+}

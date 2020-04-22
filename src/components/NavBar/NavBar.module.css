@@ -1,0 +1,24 @@
+
+.navBar{
+    grid-area: navBar;
+    background-color: darkgrey;
+}
+
+.navBar a{
+    color: white;
+    background-color: darkgrey;
+    text-decoration: none;
+}
+
+.navBar a.active{
+    color: green;
+    background-color: green;
+}
+
+
+
+.logo img {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}

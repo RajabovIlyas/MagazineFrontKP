@@ -1,0 +1,13 @@
+.header{
+    grid-area: header;
+    background-color: white;
+}
+
+.header img{
+    width: 100px;
+}
+
+.button_size{
+    width: 40%;
+    margin: 0 8px;
+}
