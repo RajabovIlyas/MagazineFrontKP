@@ -1,0 +1,18 @@
+
+.text1{
+    text-align: center;
+}
+
+.example_input {
+    width: 250px;
+}
+
+.registration{
+    background-color: white;
+    margin: 16px 16px;
+    border-radius: 4px;
+}
+
+.input_size{
+    width: 50%;
+}

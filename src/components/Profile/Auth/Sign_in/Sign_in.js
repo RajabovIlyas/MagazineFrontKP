@@ -2,6 +2,7 @@ import React from "react";
 import classes from './Sign_in.module.css';
 import 'antd/dist/antd.css';
 import {Form, Input, Button, Checkbox, Layout} from 'antd';
+import {Redirect} from "react-router-dom";
 const { Content} = Layout;
 
 const layout = {
@@ -20,7 +21,9 @@ const tailLayout = {
 };
 
 const Sign_in = (props) => {
-
+    if(props.isAuth){
+        return <Redirect to={'/personal_area'}/>
+    }
 
     return (
         <Content className={classes.sign_in}>

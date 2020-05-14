@@ -6,36 +6,19 @@ import {compose} from "redux";
 import {withAuthRedirect} from "../../../../../hoc/withAuthRedirect";
 
 class Add_computersContainer extends React.Component{
-    state = {
-        name: React.createRef(),
-        rom: React.createRef(),
-        ram: React.createRef(),
-        video_card: React.createRef(),
-        cpu: React.createRef(),
-        manufacturer: React.createRef(),
-        img: React.createRef(),
-        price: React.createRef(),
+    onFinish(values) {
+        this.props.addNewComputer(values);
+        //this.props.changeSaveComputer({id:this.id,...values});
     };
 
-    change () {
-        let data_change = {
-            name: this.state.name.current.value,
-            rom: this.state.rom.current.value,
-            ram: this.state.ram.current.value,
-            video_card: this.state.video_card.current.value,
-            cpu: this.state.cpu.current.value,
-            manufacturer: this.state.manufacturer.current.value,
-            img: this.state.img.current.value,
-            price: this.state.price.current.value,
-        };
+    onFinishFailed(values){
 
-        this.props.updateNewComputer(data_change);
-    };
-
+    }
     render() {
         return (
             <>
-                <Add_computers {...this.props} change={this.change.bind(this)} state={this.state}/>
+                <Add_computers {...this.props} onFinish={this.onFinish.bind(this)}
+                               onFinishFailed={this.onFinishFailed.bind(this)}/>
             </>
         )
     }
@@ -45,7 +28,7 @@ class Add_computersContainer extends React.Component{
 
 const mapStateToProps = (state) => {
     return{
-        computers_new_data: state.computer_add.computers_new_data
+        computer: state.computer_add.computers_new_data
     }
 };
 

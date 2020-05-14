@@ -1,27 +1,18 @@
 import React from "react";
 import {connect} from "react-redux";
 import Sign_in from "./Sign_in";
-import {setAuthUserDataAction} from "../../../../redux/auth_reducer";
-import {message} from "antd";
-import {authAPI} from "../../../../api/api";
+import {setAuthThunk} from "../../../../redux/auth_reducer";
 
 
 class Sign_inContainer extends React.Component {
     onFinish(values) {
-
-        authAPI.sing_in_post(values.email,values.password,values.remember)
-            .then(data => {
-                message.success("Авторизация прошла успешно");
-                this.props.setAuthUserData(data);
-            }, (error) => {
-                message.error(error.response.data.message);
-            });
+        this.props.setAuthApiPost(values.email, values.password, values.remember);
     };
+
 
     onFinishFailed(errorInfo) {
         debugger;
         console.log('Failed:', errorInfo);
-
     };
 
     render() {
@@ -34,8 +25,10 @@ class Sign_inContainer extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+    isAuth:state.authReducer.isAuth,
+});
 
 export default connect(mapStateToProps, {
-    setAuthUserData: setAuthUserDataAction,
+    setAuthApiPost:setAuthThunk,
 })(Sign_inContainer);

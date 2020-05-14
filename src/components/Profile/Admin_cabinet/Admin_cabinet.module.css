@@ -1,0 +1,24 @@
+
+
+.text1{
+    text-align: center;
+}
+
+.example_input {
+    width: 250px;
+}
+
+.admin_cabinet{
+    background-color: white;
+    margin: 16px 16px;
+    border-radius: 4px;
+}
+
+.input_size{
+    width: 50%;
+}
+
+.tabs{
+    text-align: center;
+    background: #f0f2f5;
+}

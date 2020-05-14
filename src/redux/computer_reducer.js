@@ -5,6 +5,7 @@ const SET_COMPUTERS = 'SET_COMPUTERS';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
 const SELECT_PAGE = 'SELECT_PAGE';
 const CHANGE_SIZE_PAGE = 'CHANGE_SIZE_PAGE';
+const DELETE_COMPUTER_ID='DELETE_COMPUTER_ID';
 
 let initialState = {
     computers_section: [],
@@ -12,19 +13,6 @@ let initialState = {
     quantity: 1,
     pageSize: 10,
     isFetching: true
-};
-
-
-const success = () => {
-    message.success('Данные успешно сохранены');
-};
-
-const error = () => {
-    message.error('Ошибка в сохнанении данных');
-};
-
-const warning = () => {
-    message.warning('Необходимо заполнить все ячейки');
 };
 
 const computerReducer = (state = initialState, action) => {
@@ -44,6 +32,16 @@ const computerReducer = (state = initialState, action) => {
         case CHANGE_SIZE_PAGE: {
             return {...state, pageSize: action.pageSize, page: action.page}
         }
+        case DELETE_COMPUTER_ID:{
+            for(let i=0;i<state.computers_section.length;i++){
+                if(action.deleteId===state.computers_section[i]._id){
+                    console.log(state.computers_section[i]._id)
+                    delete state.computers_section[i]._id;
+                    break
+                }
+            }
+            return {...state};
+        }
         default:
             return state;
     }
@@ -55,6 +53,7 @@ export const setComputersAction = (computers_section) => ({type: SET_COMPUTERS, 
 export const toggleIsFetchingCA = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching});
 export const selectPage = (page) => ({type: SELECT_PAGE, page});
 export const changeSizePage = (current, pageSize) => ({type: CHANGE_SIZE_PAGE, page: current, pageSize});
+export const deleteComputerAction=(id)=>({type: DELETE_COMPUTER_ID, deleteId:id});
 
 export const getComputersThunk = (page, pageSize) => dispatch => {
     dispatch(toggleIsFetchingCA(true));
@@ -65,6 +64,16 @@ export const getComputersThunk = (page, pageSize) => dispatch => {
         }, (error) => {
             dispatch(toggleIsFetchingCA(false));
         });
+};
+
+export const deleteComputerThunk=(id,page=1, pageSize=10)=>dispatch=>{
+    computerAPI.deleteComputer(id)
+        .then(data=>{
+            message.success("Данные успешно удалены");
+            dispatch(getComputersThunk(page, pageSize))
+        }).catch(err=>message.error("Данные не удалось удалить"));
+
+
 };
 
 export default computerReducer;

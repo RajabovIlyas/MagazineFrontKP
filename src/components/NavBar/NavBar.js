@@ -23,7 +23,7 @@ class NavBar extends React.Component {
         collapsed: true,
     };
 
-    onCollapse=collapsed=> {
+    onCollapse = collapsed => {
         this.setState({collapsed});
     };
 
@@ -60,14 +60,20 @@ class NavBar extends React.Component {
                         key="sub2"
                         title={
                             <span>
-                  <UserOutlined/>
-                  <span>Личный кабинет</span>
-                </span>
-                        }
-                    >
-                        <Menu.Item key="5"><ShoppingCartOutlined/>Покупки</Menu.Item>
-                        <Menu.Item key="6"><StarOutlined/>Корзина</Menu.Item>
-                        <Menu.Item key="7"><SettingFilled/>Настройки</Menu.Item>
+                                <UserOutlined/>
+                                <span>Личный кабинет</span>
+                            </span>
+                        }>
+                        <Menu.Item key="6">
+                            <NavLink to='/purchase_history'>
+                                <ShoppingCartOutlined/>Покупки
+                            </NavLink>
+                        </Menu.Item>
+                        <Menu.Item key="7">
+                            <NavLink to='/basket_history'>
+                                <StarOutlined/>Корзина
+                            </NavLink>
+                        </Menu.Item>
                     </SubMenu>
                     <SubMenu
                         key="sub3"
@@ -78,9 +84,9 @@ class NavBar extends React.Component {
                 </span>
                         }
                     >
-                        <Menu.Item key="8"><LineChartOutlined/><NavLink
+                        <Menu.Item key="9"><LineChartOutlined/><NavLink
                             to='/admin/statics_production'>Статистика</NavLink></Menu.Item>
-                        <Menu.Item key="9"><PlusOutlined/><NavLink to='/admin/work_with_production'>Работа с
+                        <Menu.Item key="10"><PlusOutlined/><NavLink to='/admin'>Работа с
                             продукцией</NavLink></Menu.Item>
                     </SubMenu>
                 </Menu>

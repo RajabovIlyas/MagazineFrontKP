@@ -1,0 +1,31 @@
+.computers_section{
+    background-color: white;
+    margin: 8px 16px;
+    border-radius: 4px;
+}
+
+.text1{
+    text-align: center;
+}
+
+.example_input {
+    border: solid grey 1px;
+    width: 250px;
+    border-radius: 2px;
+    padding:0 5px;
+}
+
+.example_input:hover {
+    border-color: #1890ff;
+    box-shadow: 0px 0px 2px 0px #1890ff;
+}
+
+.line {
+    border-left: 2px solid #f0f2f5; /* Параметры линии */
+    margin-left: 20px; /* Отступ слева */
+    padding-left: 10px; /* Расстояние от линии до текста */
+}
+
+.center {
+    text-align: center;
+}

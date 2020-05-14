@@ -11,3 +11,15 @@ export const maxLengthCreator=maxLength=>value=>{
     }
     return undefined;
 };
+
+export const getNiceDate=str=>{
+    let newStr='';
+    for(let i=0;i<19;i++){
+        if(i===10){
+            newStr+=' ';
+            continue;
+        }
+            newStr+=str[i];
+    }
+    return newStr;
+};

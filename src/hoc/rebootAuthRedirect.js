@@ -8,13 +8,14 @@ const mapStateToPropsForRedirect = (state) => {
     }
 };
 
-export const withAuthRedirect = (Component) => {
+export const rebootAuthRedirect = (Component) => {
+
     class RedirectComponent extends React.Component {
-        
+
 
         render() {
             if(!this.props.isAuth){
-                return <Redirect to='/sign_in'/>
+
             }
             return <Component {...this.props}/>
         }
@@ -23,5 +24,7 @@ export const withAuthRedirect = (Component) => {
 
 
 
-    return connect(mapStateToPropsForRedirect,)(RedirectComponent);
+    return connect(mapStateToPropsForRedirect,{
+
+    })(RedirectComponent);
 };

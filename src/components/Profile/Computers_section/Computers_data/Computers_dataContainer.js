@@ -1,11 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import Computers_data from "./Computers_data";
-import {
-    changeSizePage,
-    getComputersThunk,
-    selectPage,
-} from "../../../../redux/computer_reducer";
+import {changeSizePage, getComputersThunk, selectPage} from "../../../../redux/computer_reducer";
 
 class Computers_dataContainer extends React.Component{
     componentDidMount() {
@@ -42,5 +38,6 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     selectPage,
-    changeSizePage,getComputers:getComputersThunk,
+    changeSizePage,
+    getComputers:getComputersThunk,
 })(Computers_dataContainer);

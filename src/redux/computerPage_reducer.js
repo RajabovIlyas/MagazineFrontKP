@@ -1,5 +1,5 @@
 import {message} from "antd";
-import {computerAPI} from "../api/api";
+import {basketAPI, buyAPI, computerAPI} from "../api/api";
 
 const SET_COMPUTER = 'SET_COMPUTER';
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING';
@@ -9,18 +9,6 @@ let initialState = {
     computers_section: {},
     pageSize: 10,
     isFetching: true
-};
-
-const success = () => {
-    message.success('Данные успешно сохранены');
-};
-
-const error = () => {
-    message.error('Ошибка в сохнанении данных');
-};
-
-const warning = () => {
-    message.warning('Необходимо заполнить все ячейки');
 };
 
 const computerPageReducer = (state = initialState, action) => {
@@ -48,6 +36,33 @@ export const getComputerThunk = (id) => dispatch => {
             dispatch(toggleIsFetchingCA(false));
         }, (error) => {
             dispatch(toggleIsFetchingCA(false));
+        });
+};
+
+export const addCommentUserThunk=(values)=>dispatch=>{
+    computerAPI.commentAdd(values.id,values.user)
+        .then(data => {
+            dispatch(getComputerThunk(values.id));
+            message.success('Коменнтарий успешно добавлен');
+        }, (error) => {
+            message.warning('Ошибка в сохранении коментария');
+        });
+};
+
+export const buyComputerThunk=(values)=>dispatch=>{
+    buyAPI.addBuy(values)
+         .then(data => {
+             message.success('Покупка успешно выполнена');
+         }, (error) => {
+             message.warning('Ошибка в покупке продукции');
+         });
+};
+export const addBasketComputerThunk=(values)=>dispatch=>{
+    basketAPI.addBasket(values)
+        .then(data => {
+            message.success('Продукт успешно добавлен в корзину');
+        }, (error) => {
+            message.warning('Ошибка в добавлении в корзину');
         });
 };
 
